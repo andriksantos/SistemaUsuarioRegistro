@@ -1,5 +1,3 @@
-stro.phpPHP
-
 <?php
 	require 'funcs/conexion.php';
 	include 'funcs/funcs.php';
@@ -16,7 +14,7 @@ stro.phpPHP
 		$captcha = $mysqli->real_escape_string($_POST['g-recaptcha-response']);
 		$activo = 0;
 		$tipo_usuario = 2;
-		$secret = 'clave secreta de reCaptcha';//Modificar
+		$secret = '6LdFsDIUAAAAAMwFsbPk7S8-bhSvOimP_SpmCZ1l';//Modificar
 		
 		if(!$captcha){
 			$errors[] = "Por favor verifica el captcha";
@@ -207,15 +205,15 @@ stro.phpPHP
 			</div>
 		</div>
 
-		<br>
-	 <br>
-	 <br>
-	 <br>
-	 <br>
-	 <br>
-	 <br>
-	 <br>
-	 <br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
 	 
 
 	<footer>

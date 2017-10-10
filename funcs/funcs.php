@@ -130,10 +130,10 @@
 		$mail->Host = 'smtp.hosting.com';
 		$mail->Port = 'puerto';
 		
-		$mail->Username = 'miemail@dominio.com';
-		$mail->Password = 'password';
+		$mail->Username = 'andricksantos1@gmail.com';
+		$mail->Password = 'thatmetalshow';
 		
-		$mail->setFrom('miemail@dominio.com', 'Sistema de Usuarios');
+		$mail->setFrom('andricksantos1@gmail.com', 'Sistema de Usuarios');
 		$mail->addAddress($email, $nombre);
 		
 		$mail->Subject = $asunto;

@@ -1,3 +1,15 @@
+<?php
+	require 'funcs/conexion.php';
+	include 'funcs/funcs.php';
+	
+	if(isset($_GET["id"]) AND isset($_GET['val']))
+	{	
+		$idUsuario = $_GET['id'];
+		$token = $_GET['val'];
+		
+		$mensaje = validaIdToken($idUsuario, $token);
+	}
+?>
 <html>
 	<head>
 	    <meta charset="utf-8">
