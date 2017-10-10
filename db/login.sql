@@ -1,94 +1,60 @@
--- phpMyAdmin SQL Dump
--- version 4.4.15.5
--- http://www.phpmyadmin.net
+CREATE DATABASE  IF NOT EXISTS `login` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `login`;
+-- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Servidor: localhost
--- Tiempo de generación: 27-02-2017 a las 22:26:36
--- Versión del servidor: 5.6.35-log
--- Versión de PHP: 5.6.28
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
+-- Host: localhost    Database: login
+-- ------------------------------------------------------
+-- Server version	5.7.19-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Base de datos: `login`
+-- Table structure for table `usuarios`
 --
 
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `tipo_usuario`
---
-
-CREATE TABLE IF NOT EXISTS `tipo_usuario` (
+DROP TABLE IF EXISTS `usuarios`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
-  `tipo` varchar(50) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `tipo_usuario`
---
-
-INSERT INTO `tipo_usuario` (`id`, `tipo`) VALUES
-(1, 'Administrador'),
-(2, 'Usuario');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `usuarios`
---
-
-CREATE TABLE IF NOT EXISTS `usuarios` (
-  `id` int(11) NOT NULL,
-  `usuario` varchar(30) NOT NULL,
-  `password` varchar(130) NOT NULL,
-  `nombre` varchar(100) NOT NULL,
-  `correo` varchar(80) NOT NULL,
-  `last_session` datetime DEFAULT NULL,
-  `activacion` int(11) NOT NULL DEFAULT '0',
-  `token` varchar(40) NOT NULL,
-  `token_password` varchar(100) DEFAULT NULL,
-  `password_request` int(11) DEFAULT '0',
-  `id_tipo` int(11) NOT NULL
+  `nombre` varchar(45) NOT NULL,
+  `email` varchar(45) NOT NULL,
+  `clave` varchar(45) NOT NULL,
+  `cargo` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Índices para tablas volcadas
+-- Dumping data for table `usuarios`
 --
 
---
--- Indices de la tabla `tipo_usuario`
---
-ALTER TABLE `tipo_usuario`
-  ADD PRIMARY KEY (`id`);
+LOCK TABLES `usuarios` WRITE;
+/*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
+INSERT INTO `usuarios` VALUES (1,'andrick','andricksantos1@gmail.com','arsm1234','1');
+/*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
--- Indices de la tabla `usuarios`
+-- Dumping routines for database 'login'
 --
-ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id`);
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
---
--- AUTO_INCREMENT de las tablas volcadas
---
-
---
--- AUTO_INCREMENT de la tabla `tipo_usuario`
---
-ALTER TABLE `tipo_usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT de la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2017-10-10 11:06:25
