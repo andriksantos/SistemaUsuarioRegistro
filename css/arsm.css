@@ -1,0 +1,18 @@
+body{
+	background: url(../img/fondo.png);
+	background-repeat: none;
+	background-size: cover;
+	color: white;
+}
+
+footer{
+	text-align: center;
+	color: white;
+}
+.as{
+	color: white;
+}
+.as:hover{
+	color: white;
+	text-decoration: none;
+}
